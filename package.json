@@ -1,0 +1,49 @@
+{
+  "name": "react-ts-template",
+  "version": "1.0.0",
+  "description": "用webpack5搭建的react+ts模板",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "dev": "webpack --mode development",
+    "test": "jest",
+    "lint:staged": "lint-staged"
+  },
+  // "lint-staged": {
+  //   "linters": {
+  //     "*.js": [
+  //       "eslint --ext .js src"
+  //     ]
+  //   },
+  //   "ignore": []
+  // },
+  "pre-commit": "lint:staged",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Y-wson/react-ts-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Y-wson/react-ts-template/issues"
+  },
+  "homepage": "https://github.com/Y-wson/react-ts-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^7.32.0",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.2.0",
+    "lint-staged": "^11.1.2",
+    "pre-commit": "^1.2.2",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.3",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  }
+}
