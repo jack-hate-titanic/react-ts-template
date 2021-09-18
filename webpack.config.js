@@ -1,7 +1,7 @@
 /*
  * @Author: ws
  * @Date: 2021-09-17 08:22:05
- * @LastEditTime: 2021-09-17 08:57:05
+ * @LastEditTime: 2021-09-18 22:06:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /react-ts-template/webpack.config.js
@@ -10,12 +10,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.export = {
+module.exports = {
   mode: "development",
-  entry: "./src/index.ts",
+  entry: path.join(__dirname, "./src/index.ts"),
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(__dirname, "dist"),
   },
   devtool: "source-map",
   module: {
@@ -41,7 +41,7 @@ module.export = {
       cleanOnceBeforeBuildPatterns: ["./dist"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: path.join(__dirname, "src/index.html"),
     }),
   ],
   resolve: {
