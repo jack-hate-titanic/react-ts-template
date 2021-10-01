@@ -1,14 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2021-10-01 11:03:57
- * @LastEditTime: 2021-10-01 18:02:50
+ * @LastEditTime: 2021-10-01 23:15:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /react-ts-template/config/webpack.common.js
  */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = {
@@ -27,7 +26,7 @@ module.exports = {
         },
       },
       {
-        test: [/\.less$/, /\.css$/],
+        test: /\.less$/,
         exclude: /node_modules/,
         use: ["style-loader", "css-loader", "less-loader"],
       },
@@ -50,17 +49,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../public/index.html"),
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          context: path.join(__dirname, "../public"),
-          from: "*",
-          to: path.join(__dirname, "../dist"),
-          toType: "dir",
-        },
-      ],
-    }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      name: true,
+    },
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"],
   },
